@@ -28,10 +28,10 @@ export class RadiceComponent implements OnInit {
       next: (x: AjaxResponse<any>) => {
         this.archivio = new Archivio(JSON.parse(x.response), this.as);
       },
-      error: (err) =>
-        console.error('Observer got an error: ' + JSON.stringify(err)),
+      error: (errore) =>
+        console.error('Observer got an error: ' + JSON.stringify(errore)),
       complete: () => {
-      console.log(this.archivio);
+        console.log(this.archivio);
       },
     });
   }

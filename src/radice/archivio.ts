@@ -49,8 +49,8 @@ export class Archivio {
   aggiornaBiblioteca() {
     this.as.setData(JSON.stringify(this.inventario)).subscribe({
       next: () => console.log('Archivio aggiornato!'),
-      error: (err) =>
-        console.log('Observer got an error: ' + JSON.stringify(err)),
+      error: (errore) =>
+        console.log('Observer got an error: ' + JSON.stringify(errore)),
     });
   }
 }
