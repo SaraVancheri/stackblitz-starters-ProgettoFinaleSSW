@@ -1,0 +1,15 @@
+/* Add application styles & imports to this file! */
+body {
+  text-align: center;
+}
+
+button {
+  border-radius: 10px;
+  margin: 5px 20px;
+  padding: 10px;
+}
+
+label {
+  margin: 5px;
+  border: thin;
+}

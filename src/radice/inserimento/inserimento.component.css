@@ -1,0 +1,15 @@
+#nuovoAutore,
+#nuovoTitolo,
+#nuovaPosizione {
+  margin: 5px;
+  width: 200px;
+}
+
+.notifica {
+  padding: 5px;
+  color: red;
+}
+#bottoneInserisci,
+#bottoneHome {
+  margin: 20px;
+}

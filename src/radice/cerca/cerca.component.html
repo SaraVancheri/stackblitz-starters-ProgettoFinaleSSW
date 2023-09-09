@@ -1,0 +1,39 @@
+<!--visualizzazione della view di ricerca-->
+<div *ngIf="view == 'viewCerca'">
+  <h1>Ricerca per titolo e autore</h1>
+
+  <input
+    type="text"
+    id="stringa"
+    placeholder="Digita il titolo o l'autore del volume"
+    (keyup)="cerca()"
+  />
+  <div id="numOccorrenze">Ho trovato {{ output }} corrispondenze</div>
+</div>
+
+<div *ngIf="view == 'viewRisultato'">
+  <h2>Descrizione del volume:</h2>
+  <p>
+    {{ libroTrovato[0].posizione }}
+  </p>
+  <p>Titolo: {{ libroTrovato[0].titolo }}</p>
+  <p>Autore: {{ libroTrovato[0].autore }}</p>
+
+  <app-prestito
+    [libroTrovato]="libroTrovato"
+    (aggiornaView)="cambioView($event)"
+    [archivio]="archivio"
+  ></app-prestito>
+
+  <app-rimozione
+    [archivio]="archivio"
+    [libroTrovato]="libroTrovato"
+    (aggiornaView)="cambioView($event)"
+  >
+  </app-rimozione>
+</div>
+
+<hr />
+
+<div *ngIf="view == 'viewCerca'"></div>
+<button (click)="cambioView('HomePage')">Torna alla home</button>

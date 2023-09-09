@@ -1,0 +1,16 @@
+<!--visualizzazione della home page-->
+<div *ngIf="view == 'HomePage'">
+  <h1>Gestione biblioteca</h1>
+  <button (click)="cambioView('viewCerca')">Ricerca</button>
+  <button (click)="cambioView('viewInserimento')">Inserimento</button>
+</div>
+
+<div *ngIf="view == 'viewInserimento'">
+  <app-inserimento (aggiornaView)="cambioView($event)" [archivio]="archivio">
+  </app-inserimento>
+</div>
+
+<div *ngIf="view == 'viewCerca'">
+  <app-cerca (aggiornaView)="cambioView($event)" [archivio]="archivio">
+  </app-cerca>
+</div>

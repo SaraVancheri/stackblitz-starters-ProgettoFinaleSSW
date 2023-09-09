@@ -1,0 +1,34 @@
+<!--visualizzazione della view di inserimento di un nuovo libro-->
+<h1>Inserimento di un nuovo volume</h1>
+
+<div class="form" *ngIf="view == 'viewInserimento'">
+  <label for="autore">Autore: </label>
+  <input
+    type="text"
+    id="nuovoAutore"
+    placeholder="Digita il nome di un autore"
+  />
+
+  <br />
+
+  <label for="titolo">Titolo: </label>
+  <input
+    type="text"
+    id="nuovoTitolo"
+    placeholder="Digita il titolo di un volume"
+  />
+
+  <br />
+
+  <label for="posizione">Posizione: </label>
+  <input
+    type="text"
+    id="nuovaPosizione"
+    placeholder="Digita la posizione del volume"
+  /><br />
+  <div class="notifica">{{ notifica }}</div>
+
+  <button id="bottoneInserisci" (click)="nuovoLibro()">Inserisci</button>
+
+  <button id="bottoneHome" (click)="cambioView('HomePage')">Esci</button>
+</div>
