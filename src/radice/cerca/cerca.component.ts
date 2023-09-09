@@ -18,7 +18,7 @@ export class CercaComponent implements OnInit {
   @Input() archivio: Archivio;
   view: string = 'viewCerca';
   output: number = 0;
-  libroTrovato: Array<Libro> = [];
+  risultatoRicerca: Array<Libro> = [];
 
   constructor() {}
 
@@ -37,7 +37,7 @@ export class CercaComponent implements OnInit {
     //se numero di libri corrispondenti è pari a 1 allora viene visualizzata la scheda del libro
     if (this.output === 1) {
       this.view = 'viewRisultato';
-      this.libroTrovato.push(trovati[0]);
+      this.risultatoRicerca.push(trovati[0]);
     }
   }
 }

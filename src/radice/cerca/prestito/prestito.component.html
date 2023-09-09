@@ -1,4 +1,4 @@
-<div *ngIf="libroTrovato[0].utente; else libroDisponibile">
+<div *ngIf="risultatoRicerca[0].utente; else libroDisponibile">
   <p id="prestito">In prestito</p>
   <p>
     <button (click)="restituzione()">Restituisci</button>

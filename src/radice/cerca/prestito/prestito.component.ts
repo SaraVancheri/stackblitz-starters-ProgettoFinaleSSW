@@ -12,7 +12,7 @@ import { bibliotecaService } from '../../biblioteca.service';
   standalone: true,
 })
 export class PrestitoComponent implements OnInit {
-  @Input() libroTrovato: Array<Libro>;
+  @Input() risultatoRicerca: Array<Libro>;
   @Input() archivio: Archivio;
   @Output() aggiornaView = new EventEmitter<string>();
   view: string = 'viewRisultati';
@@ -22,14 +22,14 @@ export class PrestitoComponent implements OnInit {
   ngOnInit() {}
 
   restituzione() {
-    this.archivio.restituisciLibro(this.libroTrovato[0]);
+    this.archivio.restituisciLibro(this.risultatoRicerca[0]);
     this.aggiornaView.emit('HomePage');
   }
 
   prestito() {
     let stringaInput = (document.getElementById('prestito') as HTMLInputElement)
       .value;
-    this.archivio.prestitoLibro(this.libroTrovato[0], stringaInput);
+    this.archivio.prestitoLibro(this.risultatoRicerca[0], stringaInput);
     this.aggiornaView.emit('HomePage');
   }
 }
