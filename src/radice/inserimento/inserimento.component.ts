@@ -39,7 +39,6 @@ export class InserimentoComponent implements OnInit {
       document.getElementById('nuovaPosizione') as HTMLInputElement
     ).value;
     let newLibro = new Libro(nuovoTitolo, nuovoAutore, nuovaPosizione, '');
-    //verifica che il libro inserito non ricopra una posizione già occupata. Se la posizione è libera allora viene aggiunto il nuovo libro in archivio
     if (
       nuovoAutore.trim() === '' ||
       nuovoTitolo.trim() === '' ||
